@@ -1,3 +1,4 @@
+![Ulaa](https://ulaa.com/images/ulaa_ham.png)
 # Ulaa Browser with noVNC
 
 Run Ulaa Browser in a Docker container with web-based VNC access. No VNC client needed - access the browser directly from your web browser!
@@ -15,7 +16,7 @@ Run Ulaa Browser in a Docker container with web-based VNC access. No VNC client 
 ### Pull and Run
 
 ```bash
-docker run -d -p 6080:6080 --name ulaa-browser <your-dockerhub-username>/ulaa-browser-novnc
+docker run -d -p 6080:6080 --name ulaa-browser siddhmistry/ulaa-browser
 ```
 
 ### Access the Browser
@@ -33,7 +34,7 @@ That's it! The Ulaa browser will be running and ready to use.
 ### Basic Run
 
 ```bash
-docker run -d -p 6080:6080 --name ulaa-browser <your-dockerhub-username>/ulaa-browser-novnc
+docker run -d -p 6080:6080 --name ulaa-browser siddhmistry/ulaa-browser
 ```
 
 ### Custom Port
@@ -41,7 +42,7 @@ docker run -d -p 6080:6080 --name ulaa-browser <your-dockerhub-username>/ulaa-br
 If you want to use a different port (e.g., 8080):
 
 ```bash
-docker run -d -p 8080:6080 --name ulaa-browser <your-dockerhub-username>/ulaa-browser-novnc
+docker run -d -p 8080:6080 --name ulaa-browser siddhmistry/ulaa-browser
 ```
 
 Then access at: `http://localhost:8080/`
@@ -51,7 +52,7 @@ Then access at: `http://localhost:8080/`
 If you also want to access via a traditional VNC client:
 
 ```bash
-docker run -d -p 6080:6080 -p 5900:5900 --name ulaa-browser <your-dockerhub-username>/ulaa-browser-novnc
+docker run -d -p 6080:6080 -p 5900:5900 --name ulaa-browser siddhmistry/ulaa-browser
 ```
 
 Connect with VNC client to: `localhost:5900`
@@ -89,7 +90,7 @@ Xvfb :99 -screen 0 1280x720x24 &\n\
 For better browser performance, you can increase shared memory:
 
 ```bash
-docker run -d -p 6080:6080 --shm-size=2g --name ulaa-browser <your-dockerhub-username>/ulaa-browser-novnc
+docker run -d -p 6080:6080 --shm-size=2g --name ulaa-browser siddhmistry/ulaa-browser
 ```
 
 ## Ports
@@ -110,10 +111,10 @@ docker run -d -p 6080:6080 --shm-size=2g --name ulaa-browser <your-dockerhub-use
 If you want to build the image yourself:
 
 ```bash
-git clone <your-repo-url>
-cd <repo-directory>
-docker build -t ulaa-browser-novnc .
-docker run -d -p 6080:6080 --name ulaa-browser ulaa-browser-novnc
+git clone https://github.com/mrfoxie/ulaa-browser-docker
+cd ulaa-browser-docker
+docker build -t ulaa-browser .
+docker run -d -p 6080:6080 --name ulaa-browser ulaa-browser
 ```
 
 ## Troubleshooting
@@ -150,8 +151,7 @@ This Docker image is provided as-is. Ulaa Browser is property of Zoho Corporatio
 ## Support
 
 For issues related to:
-- **This Docker image**: Open an issue on GitHub
-- **Ulaa Browser**: Visit [Zoho Support](https://www.zoho.com/support.html)
+- **This Docker image**: Open an issue on [Github](https://github.com/mrfoxie/ulaa-browser-docker/issues)
 
 ---
 
