@@ -41,14 +41,14 @@ Run [Ulaa Browser](https://www.ulaa.com/) in a Docker container with web-based a
 docker pull siddhmistry/ulaa-browser:0.0.2
 
 docker run -d \
-  -p 6080:6080 \
+  -p 8080:8080 \
   --name ulaa-browser \
   siddhmistry/ulaa-browser:0.0.2
 ```
 
 Then open your browser and navigate to:
 ```
-http://localhost:6080
+http://localhost:8080
 ```
 
 That's it! The browser will auto-connect and open automatically! 🎉
@@ -59,7 +59,7 @@ That's it! The browser will auto-connect and open automatically! 🎉
 git clone https://github.com/mrfoxie/ulaa-browser-docker.git
 cd ulaa-browser-docker
 docker build -t ulaa-browser:latest .
-docker run -d -p 6080:6080 --name ulaa-browser ulaa-browser:latest
+docker run -d -p 8080:8080 --name ulaa-browser ulaa-browser:latest
 ```
 
 ## ⚙️ Configuration
@@ -68,7 +68,7 @@ docker run -d -p 6080:6080 --name ulaa-browser ulaa-browser:latest
 
 ```bash
 docker run -d \
-  -p 6080:6080 \
+  -p 8080:8080 \
   -p 5900:5900 \
   --name ulaa-browser \
   siddhmistry/ulaa-browser:0.0.2
@@ -78,7 +78,7 @@ docker run -d \
 
 ```bash
 docker run -d \
-  -p 6080:6080 \
+  -p 8080:8080 \
   -p 5900:5900 \
   -v ~/Downloads:/downloads \
   -v ~/Uploads:/uploads \
@@ -100,7 +100,7 @@ docker run -d \
 | `START_URL` | `https://www.google.com` | URL to open on browser start |
 | `TZ` | `UTC` | Timezone (e.g., `Asia/Kolkata`, `America/New_York`) |
 | `VNC_PORT` | `5900` | VNC server port |
-| `NOVNC_PORT` | `6080` | noVNC web interface port |
+| `NOVNC_PORT` | `8080` | noVNC web interface port |
 
 ### Example: Different Resolutions
 
@@ -138,7 +138,7 @@ docker run -d \
 docker run -d \
   -v ~/MyDownloads:/downloads \
   -v ~/MyUploads:/uploads \
-  -p 6080:6080 \
+  -p 8080:8080 \
   --name ulaa-browser \
   siddhmistry/ulaa-browser:0.0.2
 ```
@@ -150,7 +150,7 @@ Now all browser downloads will be saved to `~/MyDownloads` on your host machine!
 ### Web Interface (Recommended)
 
 1. Open your browser
-2. Navigate to: `http://localhost:6080`
+2. Navigate to: `http://localhost:8080`
 3. Browser will auto-connect and open automatically!
 
 ### Traditional VNC Client
@@ -165,7 +165,7 @@ If you prefer using a VNC client:
 
 Replace `localhost` with your server IP:
 ```
-http://YOUR_SERVER_IP:6080
+http://YOUR_SERVER_IP:8080
 ```
 
 ## 🐳 Docker Compose
@@ -180,7 +180,7 @@ services:
     image: siddhmistry/ulaa-browser:0.0.2
     container_name: ulaa-browser
     ports:
-      - "6080:6080"
+      - "8080:8080"
       - "5900:5900"
     volumes:
       - ./downloads:/downloads
@@ -211,7 +211,7 @@ docker run -d \
   --cpus=2 \
   --memory=4g \
   --shm-size=2g \
-  -p 6080:6080 \
+  -p 8080:8080 \
   --name ulaa-browser \
   siddhmistry/ulaa-browser:0.0.2
 ```
@@ -279,7 +279,7 @@ docker rm ulaa-browser
 
 docker run -d \
   -e RESOLUTION=1280x720x24 \
-  -p 6080:6080 \
+  -p 8080:8080 \
   --name ulaa-browser \
   siddhmistry/ulaa-browser:0.0.2
 ```
@@ -292,7 +292,7 @@ docker run -d \
   --shm-size=4g \
   --memory=8g \
   --cpus=4 \
-  -p 6080:6080 \
+  -p 8080:8080 \
   --name ulaa-browser \
   siddhmistry/ulaa-browser:0.0.2
 ```
